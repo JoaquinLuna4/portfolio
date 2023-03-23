@@ -1,0 +1,141 @@
+*{
+    --font-primary: sans-serif
+}
+
+html {
+    width: 100%;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow-x: hidden;
+    }
+
+*, html {
+
+        scroll-behavior: smooth !important;
+}
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.home{
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+} 
+.welcome{
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    font-family: var(--font-primary);
+    justify-content: center;
+}
+.welcome > h1{
+    color: #FFF;
+}
+.bg-diagonal{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: #FFF;
+    margin-left: 75%;
+    transform: skew(-45deg);
+    box-shadow: inset 10px 2px 13px 0px #1b2735;
+    
+} 
+.personal-info{
+    height: 100vh;
+    width: 50%;
+    margin-right: 2em;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 1;
+    font-size: 40px;
+    font-family: var(--font-primary)
+
+}
+.personal-info > h2{
+    margin-bottom: 0;
+}
+.nextpage{
+    margin: 90vh 0 0 50%;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* PROJECTS */
+.projects{
+    text-align: center;
+}
+.projects_container{
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+}
+.projects_container > a {
+    text-decoration: none;
+}
+a[ id= "projects" ]:target {
+    -webkit-transform: translateY( 0px);
+    transform: translateY( 0px );
+    }
+
+/* ABOUT */
+#about{
+    background-color: antiquewhite;
+}
+
+.about_container{
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--font-primary);
+    padding-top: 2em;
+}
+.about_container> body > main{
+    width: 50%;
+} 
+.about_container > body > aside{
+    width: 50%;
+    list-style: none;   
+}
+.about_container > a{
+    text-decoration: none;
+}
+.about_container > body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+aside > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+ul > li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
