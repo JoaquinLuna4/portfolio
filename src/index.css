@@ -1,5 +1,8 @@
 *{
-    --font-primary: sans-serif
+    --font-primary: sans-serif;
+    --font-size-p: 16pt;
+    --font-size-subtitle: 20pt;
+    --font-size-title: 30pt;
 }
 
 html {
@@ -112,6 +115,12 @@ a[ id= "projects" ]:target {
     font-family: var(--font-primary);
     padding-top: 2em;
 }
+.about_container> body > main > h3{
+    font-size: var(--font-size-subtitle);
+}
+.about_container> body > main > h2{
+    font-size: var(--font-size-title);
+}
 .about_container> body > main{
     width: 50%;
 } 
@@ -128,6 +137,23 @@ a[ id= "projects" ]:target {
     justify-content: center;
     align-items: center;
 }
+/* .about_footer{
+    display: flex;
+    flex-direction: column;
+} */
+.about_footer > a{
+    font-size: 30pt;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_content{
+    padding: 1em;
+    font-size: var(--font-size-p);
+    text-align: start;
+}
+
 aside > ul {
     list-style: none;
     display: flex;

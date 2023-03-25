@@ -81,7 +81,7 @@ function App() {
 							<h2>Joaquin Luna</h2>
 							<h3>Desarrollador Frontend</h3>
 
-							<p>
+							<p className="about_content">
 								¡Hola! Soy un desarrollador de Frontend apasionado por crear
 								experiencias de usuario atractivas y funcionales utilizando
 								tecnologías modernas como ReactJS, HTML, CSS y JavaScript. He
@@ -98,18 +98,26 @@ function App() {
 								calidad.
 							</p>
 							<Divider>
-								<Chip label="SOCIAL" />
+								<Chip label="CONTACTO" size="large" />
 							</Divider>
-							<footer>
+							<footer className="about_footer">
 								<a href="https://www.linkedin.com/in/joaquin-luna/">
-									<LinkedInIcon fontSize="large" />
+									{/* <LinkedInIcon fontSize="large" /> */}
+									<p>LinkedIn</p>
 								</a>
+								<Divider />
+
 								<a href="https://github.com/JoaquinLuna4">
-									<GitHubIcon fontSize="large" />
+									{/* <GitHubIcon fontSize="large" /> */}
+									<p>Github</p>
 								</a>
+								<Divider />
+
 								<a href="mailto:joaquinfluna4@gmail.com?Subject=Vi%20tu%20portfolio">
-									<ContactMailIcon fontSize="large" />
+									{/* <ContactMailIcon fontSize="large" /> */}
+									<p>joaquinfluna4@gmail.com</p>
 								</a>
+								<Divider />
 							</footer>
 						</main>
 						<Divider orientation="vertical" flexItem></Divider>
