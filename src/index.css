@@ -3,23 +3,76 @@
     --font-size-p: 16pt;
     --font-size-subtitle: 20pt;
     --font-size-title: 30pt;
+    --color-primary: #1b2735;
+    --color-secondary: gray;
 }
 
 html {
     width: 100%;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background: radial-gradient(ellipse at bottom, var(--color-primary) 0%, #090a0f 100%);
     overflow-x: hidden;
     }
-
-*, html {
-
-        scroll-behavior: smooth !important;
-}
 body {
     margin: 0;
     padding: 0;
     border: none;
 }
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .appear {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--color-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 9999;
+}
+
+.navbar_links {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: var(--font-primary);
+}
+
+.navbar_links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  
+}
+
+@media (max-width: 768px) {
+  .navbar_links a {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar_links a {
+    font-size: 0.8rem;
+    margin: 0 5px;
+  }
+}
+
+/* HOME */
 .home{
     overflow: hidden;
 }
@@ -40,9 +93,11 @@ body {
     font-size: 50px;
     font-family: var(--font-primary);
     justify-content: center;
+    
 }
 .welcome > h1{
     color: #FFF;
+    text-shadow: 0px 40px 40px rgba(0, 0, 0);
 }
 .bg-diagonal{
     display: block;
@@ -52,7 +107,7 @@ body {
     background-color: #FFF;
     margin-left: 75%;
     transform: skew(-45deg);
-    box-shadow: inset 10px 2px 13px 0px #1b2735;
+    box-shadow: inset 10px 2px 13px 0px var(--color-primary);
     
 } 
 .personal-info{
@@ -66,7 +121,8 @@ body {
     justify-content: flex-end;
     z-index: 1;
     font-size: 40px;
-    font-family: var(--font-primary)
+    font-family: var(--font-primary);
+    text-shadow: 0px 1px 5px rgba(0, 0, 0);
 
 }
 .personal-info > h2{
@@ -96,14 +152,23 @@ body {
     align-items: center;
     justify-items: center;
 }
-.projects_container > a {
-    text-decoration: none;
-}
-a[ id= "projects" ]:target {
-    -webkit-transform: translateY( 0px);
-    transform: translateY( 0px );
-    }
 
+.projects_card{
+    text-decoration: none;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0);
+    animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+    0% {
+      transform: translateY(0); /* Define la posición inicial */
+    }
+    50% {
+      transform: translateY(-10px); /* Define la posición de "flotación" */
+    }
+    100% {
+      transform: translateY(0); /* Vuelve a la posición inicial */
+    }
+  }
 /* ABOUT */
 #about{
     background-color: antiquewhite;
@@ -115,53 +180,64 @@ a[ id= "projects" ]:target {
     font-family: var(--font-primary);
     padding-top: 2em;
 }
-.about_container> body > main > h3{
+
+.about_container>  h1{
+    margin-top: 60px; 
+}
+.about_body > main > h3{
     font-size: var(--font-size-subtitle);
 }
-.about_container> body > main > h2{
+.about_body > main > h2{
     font-size: var(--font-size-title);
 }
-.about_container> body > main{
+.about_body > main{
     width: 50%;
 } 
-.about_container > body > aside{
+.about_body > aside{
     width: 50%;
     list-style: none;   
 }
 .about_container > a{
     text-decoration: none;
 }
-.about_container > body{
+.about_body{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-/* .about_footer{
-    display: flex;
-    flex-direction: column;
-} */
 .about_footer > a{
     font-size: 30pt;
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--color-secondary)
 }
 .about_content{
-    padding: 1em;
+    padding: 0 1em;
     font-size: var(--font-size-p);
     text-align: start;
 }
-
 aside > ul {
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
 }
-ul > li{
+aside > ul > li{
+    align-items: center;
+    font-family: var(--font-secondary);
+    font-weight: bold;
+    font-size: 20pt;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
+aside > h3{
+    font-size: 30pt;
+}
+.aside_logos{
+    width: 3em;
+    height: 3em;
+}
+  
